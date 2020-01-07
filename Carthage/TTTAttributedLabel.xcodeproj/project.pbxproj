@@ -138,7 +138,7 @@
 		A52E641E1B14C0BF002709D4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1120;
+				LastUpgradeCheck = 1130;
 				TargetAttributes = {
 					A52E64261B14C0BF002709D4 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -147,11 +147,11 @@
 			};
 			buildConfigurationList = A52E64211B14C0BF002709D4 /* Build configuration list for PBXProject "TTTAttributedLabel" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
+				Base,
 			);
 			mainGroup = A52E641D1B14C0BF002709D4;
 			productRefGroup = A52E64281B14C0BF002709D4 /* Products */;
