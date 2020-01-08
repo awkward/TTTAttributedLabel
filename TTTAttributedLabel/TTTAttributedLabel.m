@@ -1340,7 +1340,18 @@ afterInheritingLabelAttributesAndConfiguringWithBlock:(NSMutableAttributedString
 
 - (CGSize)intrinsicContentSize {
     // There's an implicit width from the original UILabel implementation
-    return [self sizeThatFits:[super intrinsicContentSize]];
+    
+    // For some reason, we get an exception from time to time in sizeThatFits:.
+    // The exception happens while calculating the attributed text bounds,
+    // while setting up CTFramesetter. Until we know the real problem, we try
+    // to get around this problem by catching it.
+    // TODO: Investigate CTFramesetter crash on some occasions.
+    @try {
+        return [self sizeThatFits:[super intrinsicContentSize]];
+    } @catch (NSException *exception) {
+        NSLog(@"Caught an exception in TTTAttributedLabel while calculating its intrinsic content size: %@", exception);
+        return CGSizeZero;
+    }
 }
 
 - (void)tintColorDidChange {
